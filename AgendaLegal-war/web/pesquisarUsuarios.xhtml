@@ -63,7 +63,10 @@
                             <p:button title="Editar"
                                       href="cadUsuarios.xhtml?id=#{u.id}"
                                       icon="fa fa-pencil"/>
-
+                            <p:commandButton update="@form" title="Excluir" icon="fa fa-trash"
+                                             oncomplete="PF('dialogRemover').show()">
+                                <f:setPropertyActionListener target="#{managerPesquisarUsuarios.usuarioDeletar}" value="#{u}" />
+                            </p:commandButton>
                             
                         </p:column>
 

@@ -28,6 +28,7 @@ public class ManagerPesquisarUsuarios implements Serializable{
     private UsuarioService usuarioService;
     private List<Usuario> usuarios;
     private Usuario usuario;
+    private Usuario usuarioDeletar;
     
     public ManagerPesquisarUsuarios() {
     }
@@ -62,4 +63,13 @@ public class ManagerPesquisarUsuarios implements Serializable{
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    public Usuario getUsuarioDeletar() {
+        return usuarioDeletar;
+    }
+
+    public void setUsuarioDeletar(Usuario usuarioDeletar) {
+        this.usuarioDeletar = usuarioDeletar;
+    }
+    
 }   

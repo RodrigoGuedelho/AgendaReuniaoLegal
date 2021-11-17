@@ -30,6 +30,7 @@ public class ManagerUsuario implements Serializable{
     UsuarioService usuarioService;
     
     private Usuario usuario;
+ 
     
     public void salvar() {
         try {
