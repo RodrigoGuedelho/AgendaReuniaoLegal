@@ -55,9 +55,9 @@ public class UsuarioService {
     public List<Usuario> find(Usuario usuario) {
         String sql = "select u from Usuario u where u.status = :status ";
 
-        if (Util.isEmpit(usuario.getNome()))
+        if (!Util.isEmpit(usuario.getNome()))
             sql += "and lower(u.nome) like lower(:nome) ";    
-        if (Util.isEmpit(usuario.getLogin())) 
+        if (!Util.isEmpit(usuario.getLogin())) 
             sql += "and lower(u.login) like lower(:login) ";
 
 
@@ -65,9 +65,9 @@ public class UsuarioService {
 
         query.setParameter("status", usuario.getStatus());
 
-        if (Util.isEmpit(usuario.getNome()))
+        if (!Util.isEmpit(usuario.getNome()))
            query.setParameter("nome","%" + usuario.getNome() + "%");
-        if (Util.isEmpit(usuario.getLogin())) 
+        if (!Util.isEmpit(usuario.getLogin())) 
             query.setParameter("login", "%" + usuario.getLogin() + "%");
       
         List<Usuario> usuarios = query.getResultList();
