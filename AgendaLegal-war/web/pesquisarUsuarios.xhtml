@@ -14,15 +14,23 @@
             <p:growl id="messages" showDetail="false" />
             <p:panel header="Filtros" toggleable="true">
                 <p:outputPanel id="filtrosPanel">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p:outputLabel value="Nome" styleClass="control-label"/>
                         <p:inputText styleClass="form-control" value="#{managerPesquisarUsuarios.usuario.nome}"
                                      onkeypress="mascara(this, soLetras)"/>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p:outputLabel value="Login" styleClass="control-label"/>
                         <p:inputText styleClass="form-control" value="#{managerPesquisarUsuarios.usuario.login}" />
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <p:outputLabel value="Status" styleClass="control-label"/>
+                        <p:selectOneMenu id="option" value="#{managerPesquisarUsuarios.usuario.status}">
+                            <f:selectItem itemLabel="ATIVO" itemValue="#{managerPesquisarUsuarios.statusAtivo}"/>
+                            <f:selectItem itemLabel="CANCELADO" itemValue="#{managerPesquisarUsuarios.statusCancelado}"/>
+                        </p:selectOneMenu>
                     </div>
                 </p:outputPanel>
             </p:panel>
@@ -88,7 +96,7 @@
                         <h:outputText value="Tem certeza que deseja remover este usuário ?" />
                     </div>
                     
-                    <p:commandButton value="Sim" update="@form" styleClass="btn btn-default"
+                    <p:commandButton value="Sim" update="@form" actionListener="#{managerPesquisarUsuarios.cancelar()}" styleClass="btn btn-default"
                                     
                                      icon="fa fa-check"/>
                     <p:commandButton value="Não" icon="fa fa-close" styleClass="btn btn-default"

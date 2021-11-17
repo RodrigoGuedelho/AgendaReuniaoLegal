@@ -8,6 +8,7 @@ package com.guedelho.managerBeans;
 import com.guedelho.enums.StatusGenerico;
 import com.guedelho.models.Usuario;
 import com.guedelho.services.UsuarioService;
+import com.guedelho.utils.Msg;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +30,17 @@ public class ManagerPesquisarUsuarios implements Serializable{
     private List<Usuario> usuarios;
     private Usuario usuario;
     private Usuario usuarioDeletar;
+    private StatusGenerico statusAtivo;
+    private StatusGenerico statusCancelado;
     
     public ManagerPesquisarUsuarios() {
+        
     }
     
     @PostConstruct
     public void init(){
+        statusAtivo = StatusGenerico.ATIVO;
+        statusCancelado = StatusGenerico.CANCELADO;
         this.limpar();
     }
     
@@ -46,6 +52,16 @@ public class ManagerPesquisarUsuarios implements Serializable{
     
     public void pesquisar() {
         usuarios = usuarioService.find(usuario);
+    }
+    
+    public void cancelar() {
+        try {
+            usuarioService.cancelar(usuarioDeletar.getId());
+            usuarios.remove(usuarioDeletar);
+            Msg.messagemInfo(Msg.SuccessFull);
+        } catch (Exception e) {
+            Msg.messagemError(e.getMessage());
+        }
     }
 
     public List<Usuario> getUsuarios() {
@@ -71,5 +87,24 @@ public class ManagerPesquisarUsuarios implements Serializable{
     public void setUsuarioDeletar(Usuario usuarioDeletar) {
         this.usuarioDeletar = usuarioDeletar;
     }
+
+    public StatusGenerico getStatusAtivo() {
+        return statusAtivo;
+    }
+
+    public void setStatusAtivo(StatusGenerico statusAtivo) {
+        this.statusAtivo = statusAtivo;
+    }
+
+    public StatusGenerico getStatusCancelado() {
+        return statusCancelado;
+    }
+
+    public void setStatusCancelado(StatusGenerico statusCancelado) {
+        this.statusCancelado = statusCancelado;
+    }
+
+   
+    
     
 }   

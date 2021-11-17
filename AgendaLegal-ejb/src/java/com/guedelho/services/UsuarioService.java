@@ -52,6 +52,16 @@ public class UsuarioService {
         return usuario != null && usuario.getStatus().equals(StatusGenerico.ATIVO) ? usuario : null;
     }
     
+    public Usuario cancelar(Long id) throws Exception {
+        Usuario usuario = findByIdActive(id);
+        if (usuario == null)
+            throw new Exception("Usuário já está cancelado");
+        usuario.setStatus(StatusGenerico.CANCELADO);
+        entityManager.merge(usuario);
+        entityManager.flush();
+        return usuario;
+    }
+    
     public List<Usuario> find(Usuario usuario) {
         String sql = "select u from Usuario u where u.status = :status ";
 
