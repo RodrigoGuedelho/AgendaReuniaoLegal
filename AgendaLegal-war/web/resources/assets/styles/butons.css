@@ -1,0 +1,39 @@
+/* 
+    Document   : butons
+    Created on : 26/09/2017, 09:06:56
+    Author     : jaciel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* BOTÃO PADRÃO */
+.btn-default{border: 1px solid #CCC !important; width: 130px !important; height: 31px; margin: 5px !important;}
+.btn-default:hover, .btn-default:focus, .btn-default:active {background: #ccc !important;}
+
+/* BOTÃO SUCESSO/INFORMAÇÃO */
+.btn-info {background-color: #1D84DF !important; background-repeat: no-repeat !important; filter: none !important; width: 130px !important; height: 31px; padding: 0 12px; margin: 5px !important; background-image: none !important; color: #ffffff !important; text-shadow: none !important}
+
+/* BOTÃO DOS MAPAS */
+.btn-mapa{float: left; margin-top: -40px; margin-left: 75px;width: 164px !important;}
+
+/* BOTÃO SPLITBUTTON */
+.ui-splitbutton{margin: 5px !important;}
+.ui-splitbutton.ui-buttonset.ui-widget > button{outline: none !important; background-image: none !important; background-repeat: no-repeat !important; border: 1px solid #CCC !important; filter: none !important; height: 31px; padding: 0px 12px;}
+.ui-splitbutton .ui-button.ui-splitbutton-menubutton {width: 30px !important;}
+.ui-buttonset {margin-right: 0 !important;}
+.ui-menu.ui-widget {min-width: 270px;}
+
+/* BOTÃO SELECTONEBUTTON */
+div.ui-selectonebutton > div.ui-state-active {background-color: #1D84DF !important; color: white; width: 85px !important;}
+.ui-button-text-only .ui-button-text {font-size: 14px !important; padding: 3.5px !important;}
+.ui-buttonset .ui-button {width: 85px;}
+
+/* ESTILO DOS BOTÕES DO IMÓVEL/DIMENSÕES */
+.limitando-button {border: 1px solid #CCC !important; float: right; width: 30px !important; height: 30px !important; right: -2px; top: -30px; margin-bottom: -30px !important;}
+
+/* ESTILO DOS ICONES DOS BOTÕES */
+.ui-button-icon-only .ui-icon.fa, .ui-button-text-icon-left .ui-icon.fa, .ui-button-text-icon-right .ui-icon.fa {font-size: 0.9em !important; margin-top: -5px !important;}
+
+/* ESTILO DOS BOTÕES LEGENDAS*/
+.btn-legenda{border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; text-align: center; padding-top: 7px; height: 33px; width: 33px; color: #FFF; display: inline-block;}
+.label-null {background-color: #DBDBDB !important; color: black !important;}

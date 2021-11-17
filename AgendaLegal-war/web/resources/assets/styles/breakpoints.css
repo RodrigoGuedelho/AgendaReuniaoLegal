@@ -1,0 +1,63 @@
+/* 
+    Document   : breakpoints
+    Created on : 09/10/2017, 09:10:42
+    Author     : jaciel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.imgIndex{margin-bottom: 15px;}
+
+/* 
+ Pra dispositivos que tem uma largura maxima de 480 pixels. celulares, por exemplo.
+*/
+@media screen and (max-width: 480px) {
+    .imgIndex{margin-top: 10px; margin-left: 2%; width: 96%;}
+
+    .maps{height: 350px !important;}
+
+    .box-content {padding: 3px !important;}
+
+    .tab-content {padding: 8px 0 !important;}
+
+    .titulo{font-size: 0.95em;}
+
+    /* DIALOGOS */
+    .dialogo{margin-right: 0 !important; margin-left: 0 !important; width: 100% !important;}
+    .dialogo-medio{margin-right: 1% !important; margin-left: 1% !important; width: 98% !important;}
+    .dialogo-confirmacao{margin-right: 1% !important; margin-left: 1% !important; width: 98% !important;}
+    .ui-dialog.ui-widget-content .ui-dialog-title {font-size: 18px !important;}
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {padding-right: 5px !important; padding-left: 5px !important;}
+
+    .image-hover{width: 150px !important;}
+    .gallery-actions-header {width: 150px;}
+}
+@media screen and (max-width: 800px) {
+    #scrollmenu{ width: 100% !important;}
+}
+
+/* 
+ Pra dispositivos que tem uma largura mínima de 768 pixels. Tablets, por exemplo.
+*/
+@media screen and (min-width: 1024px) {
+    .imgIndex{margin-top: 15px; margin-left: 20%; width: 60%;}
+}
+
+/* 
+ Com uma largura mínima de 992 pixels. Monitores por exemplo.
+*/
+@media screen and (min-width: 992px) {
+    .imgIndex{margin-top: 30%; margin-left: 5%; width: 90%;}
+}
+
+/* 
+ Dispositivos com largura mínima de 1200 pixels. Por exemplo TVs.
+*/
+@media screen and (max-width: 1200px) {
+}
+
+@media (min-width: 800px){
+    .menu-active .main-menu {
+        height: auto !important;
+    }
+}

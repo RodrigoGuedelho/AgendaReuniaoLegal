@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <f:view contentType="text/html" />
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+            <title><ui:insert name="tituloPagina">Agenda Legal</ui:insert></title>
+        </f:facet>
+
+        <f:facet name="middle">
+            <link rel="stylesheet" href="resources/assets/styles/style.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/styles/custom.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/styles/breakpoints.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/styles/alteracoes.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/styles/datatable.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/styles/butons.css" type="text/css"/>
+
+            <link rel='stylesheet prefetch' href='resources/assets/styles/photoswipe.css'/>
+            <link rel='stylesheet prefetch' href='resources/assets/styles/default-skin.css'/>
+            <link rel="stylesheet" href="resources/assets/styles/style_photo.css" type="text/css"/>
+
+            <link rel="stylesheet" href="resources/assets/fonts/fontGeral/css/fontGeral.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/fonts/material-design/css/materialdesignicons.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/plugin/waves/waves.min.css" type="text/css"/>
+        </f:facet>
+    </h:head>
+
+    <h:body> 
+        <div class="main-menu">
+            <header class="header">
+                <a href="index.xhtml" class="logo">Agenda Legal</a>
+                <button type="button" class="button-close fa fa-times js__menu_close"></button>
+                <div class="user">
+                    <h5 class="name"><label style="margin-top: 8px; text-transform: capitalize">Rodrigo</label></h5>
+                    <div class="control-wrap js__drop_down">
+                        <i class="fa fa-caret-down js__drop_down_button"></i>
+                        <div class="control-list">
+                            <div class="control-item"><a href="visualizarUsuario.xhtml?vUsuario={managerLayout.usuarioLogado.id}"><i class="fa fa-user"></i> Perfil</a></div>
+                            <div class="control-item"><a href="alterarSenha.xhtml"><i class="fa fa-key"></i> Redefinir Senha</a></div>
+                            <div class="control-item"><a href="#" class="js__toggle_open" data-target="#message-popup"><i class="fa fa-sign-out"></i> Sair</a></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <ui:include src="/WEB-INF/template/menu.xhtml"/>
+        </div>
+
+        <div class="fixed-navbar">
+            <div class="pull-left">
+                <button type="button" class="menu-mobile-button glyphicon glyphicon-menu-hamburger js__menu_mobile"></button>
+                <h1 class="page-title titulo">
+                    <ui:insert name="titulo"></ui:insert> 
+                </h1>
+            </div>
+            <div class="pull-right">
+                <a href="#" style="font-size: 27px" class="ico-item fa fa-sign-out js__toggle_open" data-target="#message-popup" title="Sair do Sistema"></a>
+
+            </div>
+        </div>
+
+        <div id="message-popup" class="notice-popup js__toggle" data-space="75">
+            <h2 class="popup-title text-center">Deseja realmente sair do Sistema De Agendas ?</h2>
+            <div class="content">
+                <h:form class="form-horizontal">
+                    <br/>
+                    <center>
+                        <p:commandButton value="Sim" actionListener="#{managerLayout.logout()}" process="@this" style="font-weight: 100 !important" styleClass="btn btn-primary text-white"/>
+                        <p:commandButton value="Não" styleClass="btn btn-danger text-white js__toggle_open"/>
+                    </center>
+                </h:form> 
+                <br/>
+            </div>
+        </div>
+
+        <div id="Geral" class="main-content">
+            <div class="row small-spacing">
+                <p:outputPanel id="conteudo">
+                    <div class="box-content" style="min-height: 550px !important">
+                        <!-- <f:event type="preRenderView" listener="{managerLayout.verificarConfiguracoesIniciais()}"/> -->
+                        <ui:insert name="corpo">
+
+                        </ui:insert>
+                    </div>
+                </p:outputPanel>
+            </div>
+            <ui:include src="/WEB-INF/template/rodape.xhtml"/>
+        </div>
+
+        <div id="divGaleria" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+
+                        <button class="pswp__button pswp__button--close" title="Fechar (Esc)"></button>
+                        <button class="pswp__button pswp__button--fs" title="Tela Cheia"></button>
+                        
+                        <button class="pswp__button pswp__button--zoom" title="Zoom +/-"></button>
+
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div> 
+                    </div>
+
+                    <button class="pswp__button pswp__button--arrow--left" title="Anterior (seta esquerda)">
+                    </button>
+
+                    <button class="pswp__button pswp__button--arrow--right" title="Próximo (seta direita)">
+                    </button>
+
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h:form id="imageForm">
+            <!-- <p:remoteCommand name="editCommand" process="@this, :imageForm:pid" update="@this, @form"
+                             actionListener="{managerImagem.edit()}"/> -->
+            <h:inputHidden id="pid"/>
+        </h:form>
+
+        <h:form id="imageRestoreForm" styleClass="form-horizontal">
+            <p:dialog id="modalDialog" header="Confirmação" widgetVar="dlgRestImagem" modal="true" 
+                      closable="false" resizable="false" responsive="true">
+                <div class="col-sm-12">
+                    <h:outputText value="Tem certeza que deseja restaurar a imagem?" />
+                </div>
+
+                <center>
+                    <p:commandButton value="Sim" styleClass="btn btn-default" icon="fa fa-check"
+                                     actionListener="{managerImagem.restaurarAnexo()}"
+                                     oncomplete="PF('dlgRestImagem').hide(); window.location.assign(window.location.href)"/>
+
+                    <p:commandButton value="Não" icon="fa fa-close" styleClass="btn btn-default"
+                                     oncomplete="PF('dlgRestImagem').hide();"/>
+                </center>
+            </p:dialog>
+        </h:form>
+
+        <!-- GERAL -->
+        <script type='text/javascript' src="resources/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src="resources/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script type='text/javascript' src="resources/assets/plugin/nprogress/nprogress.js"></script>
+        <script type='text/javascript' src="resources/assets/plugin/sweet-alert/sweetalert.min.js"></script>
+        <script type='text/javascript' src="resources/assets/plugin/waves/waves.min.js"></script>
+        <script type='text/javascript' src="resources/assets/scripts/main.js"></script>
+
+        <!-- CALENDÁRIO -->
+        <script type='text/javascript' src="resources/assets/scripts/calendar.js"></script>
+
+        <!-- MOEDA -->
+        <script type='text/javascript' src="resources/assets/scripts/autoNumeric.js"></script>
+
+        <!-- IMAGENS -->
+        <script type='text/javascript' src='resources/assets/scripts/photoswipe.js'></script>
+        <script type='text/javascript' src='resources/assets/scripts/photoswipe-ui-default.js'></script>
+        <script type='text/javascript' src="resources/assets/scripts/photoswipe-gallery.js"></script>
+        <script type='text/javascript' src="resources/assets/scripts/html2canvas.js"/>
+
+        <!-- VALIDAÇÃO -->
+        <script type='text/javascript' src="resources/assets/scripts/validacao.js"/>
+
+        <script type="text/javascript">
+
+                                    function edit() {
+                                        var pid = location.href.indexOf('pid=');
+                                        var ini = pid + 4;
+                                        var fim = location.href.length;
+                                        $('#imageForm\\:pid').val(location.href.substring(ini, fim));
+                                        editCommand();
+                                    }
+
+                                    function initPhoto() {
+                                        initPhotoSwipeFromDOM('.my-simple-gallery');
+                                    }
+
+                                    function desabilitaEdicaoImagem() {
+                                        $('.pswp__button.pswp__button--edit').css('display', 'none');
+                                    }
+
+                                    function habilitaEdicaoImagem() {
+                                        $('.pswp__button.pswp__button--edit').css('display', '');
+                                    }
+
+        </script>
+
+        <script src="media/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+
+        <script>
+                                    $("html").toggleClass("menu-active");
+                                    $(window).trigger("resize");
+                                    $.noConflict();
+        </script>
+        <style>
+            div.gmap-edit-mode > div.gm-style > div:first-child {
+                cursor: crosshair !important;
+            }
+        </style>
+    </h:body>
+</html>

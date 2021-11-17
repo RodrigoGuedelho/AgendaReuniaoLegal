@@ -1,0 +1,46 @@
+<ui:composition template="/WEB-INF/template/layout.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+             
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="titulo">
+        Novo Usuário
+    </ui:define>
+
+    <ui:define name="corpo">
+        <h:form id="userForm" styleClass="form-horizontal">
+            <p:growl id="messages" showDetail="true" />
+            <fieldset>
+                <legend>Dados Gerais</legend>
+                <div class="col-sm-12">
+                    <p:outputLabel value="Nome" styleClass="control-label" for="nameInputText"/>
+                    <p:inputText id="nameInputText" styleClass="form-control" value="#{managerUsuario.usuario.nome}" 
+                                  required="true" />
+                </div>
+
+                <div class="col-sm-6">
+                    <p:outputLabel value="Login" styleClass="control-label" for="postInputText"/>
+                    <p:inputText id="postInputText" styleClass="form-control" value="#{managerUsuario.usuario.login}" />
+                </div>
+                <div class="col-sm-6">
+                    <p:outputLabel value="Senha" styleClass="control-label" for="postInputText"/>
+                    <p:inputText id="inputSenha" styleClass="form-control" value="#{managerUsuario.usuario.senha}" />
+                </div>
+            </fieldset>
+
+               
+
+           
+
+            <center>
+                <p:commandButton value="Salvar" icon="fa fa-floppy-o" update="@form"
+                                 actionListener="#{managerUsuario.salvar()}"
+                                 styleClass="btn btn-info"/>
+                <p:button href="pesquisarUsuarios.xhtml" value="Cancelar" icon="fa fa-close"
+                          styleClass="btn btn-default"/>
+            </center>
+        </h:form>
+    </ui:define>
+</ui:composition>

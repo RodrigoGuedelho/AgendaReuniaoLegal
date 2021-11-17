@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <div class="content">
+        <div class="navigation">
+
+            <h5 class="title">Cadastros</h5>
+            <ul class="menu js__accordion">
+                <li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-book-open-page-variant"></i><span>Agendas</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="cadUsuarios.xhtml">Cadastrar</a></li>
+                        <li><a href="pesquisarUsuarios.xhtml">Pesquisar</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-account-plus"></i><span>Usuários</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <ul class="sub-menu js__content">
+                        <li><a href="cadUsuarios.xhtml">Cadastrar</a></li>
+                        <li><a href="pesquisarUsuarios.xhtml">Pesquisar</a></li>
+                    </ul>
+                </li>
+               
+                <li>
+                    <a class="waves-effect" href="configuracao.xhtml"><i class="menu-icon mdi mdi-printer"></i><span>Relatórios</span></a>
+                </li>
+            </ul>            
+         
+        </div>
+    </div>
+</ui:composition>        

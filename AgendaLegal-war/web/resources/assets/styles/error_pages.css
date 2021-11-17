@@ -1,0 +1,15 @@
+* {font-family: "Poppins",Poppins,Arial,sans-serif !important}
+#fox {color: #667B8E; font: 46pt Arial;}
+#inline {color: #F5D765; font: 46pt Arial; margin-left: -0.7%; text-align: center;}
+#tech{color: #8C8C8C; font: 14pt Arial; display: block; margin: -20px 0 0 -135px;}
+#logoCanvas {margin: -80px 0 0 -100px;}
+#titulo{height: 130px; font-size: 2.3em; color: #000;}
+#conteudo{margin: 150px 0 0 0}
+#rodape{margin-top: 120px}
+
+@media screen and (max-width: 765px) {
+    #titulo{height: 30px}
+    #conteudo{margin: 10px 0 0 0}
+    #conteudo h3{font-size: 1.45em;}
+    #rodape{margin-top: 40px}
+}

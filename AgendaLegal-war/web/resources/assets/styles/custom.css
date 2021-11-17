@@ -1,0 +1,113 @@
+@media only screen and (min-width: 200px) {
+
+    .tab-view-custom {
+        color: #1d84df !important;
+        font-size: 14px;
+        height: 45px;
+        padding: 12px 5px 12px 15px !important;
+        background-color: #ffffff !important;
+    }
+
+    .tab-view-custom:hover {
+        border-left: 5px solid #1d84df !important;
+    }
+
+    .tab-view-custom > a {
+        float: right !important;
+        height: 45px;
+        margin-top: -8px;
+        text-align: left;
+        width: 89% !important;
+    }
+
+    .ui-tabs-left > .ui-tabs-nav {
+        height: auto !important; 
+        position: fixed !important;
+        top: 30px;
+    }
+
+    .ui-tabs .ui-tabs-panel {
+        padding: 2em 0 0 1.1em !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .ui-tabs-left .ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all{
+        background-color: white;
+        display: block;
+        left: 0;
+        margin-left: 9px;
+        position: absolute;
+        transition: transform 0.3s ease-in-out 0s, width 0.3s ease-in-out 0s;
+        width: 50px;
+        z-index: 10;
+    }
+
+    div.ui-tabs-panels {
+        box-shadow: none !important;
+        margin-top: -10px;
+        width: 90% !important;
+    }
+
+    ul > li.tab-view-custom:hover{
+        border-left: 5px solid #1d84df !important;
+    }
+
+    ul > li.tab-view-custom.ui-tabs-selected:hover{
+        border-left: 5px solid #1d84df !important;
+    }
+
+    .tab-view-custom > a {
+        font-size: 0 !important;
+        height: 45px;
+        margin-left: -14px;
+        margin-top: -30px;
+        width: 45px !important;
+        color: #1d84df !important;
+    }
+
+    .tab-view-custom:hover {
+        left: 200px !important;
+        width: 247.8px !important;
+        background-color: #ECF0F5 !important;
+    }
+
+    .tab-view-custom:hover > a {
+        font-size: 14px !important;
+        margin-left: 0px !important;
+        margin-top: -8px !important;
+        width: 170px !important;
+    }
+
+    .dropdown.dropdown-submenu-left>.dropdown-menu>.dropdown.dropdown-submenu>.dropdown-menu{
+        top:0;
+        left:-100%;
+        margin-top:-6px;
+        margin-left:-1px;
+        -webkit-border-radius:6px 0px 6px 6px;
+        -moz-border-radius:6px 0px 6px 6px;
+        border-radius:6px 0px 6px 6px;
+    }
+}
+
+.ui-tabs-selected.ui-state-active{
+    background-color: #ECF0F5 !important;
+    border-left: 5px solid #3C8DBC !important;
+    color: #1d84df !important;
+}
+
+.ui-tabs-selected.ui-state-active a{
+    color: #1d84df !important;
+    text-decoration: none !important;
+}
+
+.ui-tabs-left > .ui-tabs-nav {
+    height: auto !important; 
+    position: fixed;
+    max-width: 18% !important;
+    top: 100px;
+}
+
+.ui-tabs-left > .ui-tabs-panels {
+    margin-top: -30px;
+}

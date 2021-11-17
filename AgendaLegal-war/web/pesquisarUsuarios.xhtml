@@ -1,0 +1,97 @@
+<ui:composition template="/WEB-INF/template/layout.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+             
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="titulo">
+        Novo Usuário
+    </ui:define>
+
+    <ui:define name="corpo">
+        <h:form id="userForm" styleClass="form-horizontal">
+            <p:growl id="messages" showDetail="false" />
+            <p:panel header="Filtros" toggleable="true">
+                <p:outputPanel id="filtrosPanel">
+                    <div class="col-md-6">
+                        <p:outputLabel value="Nome" styleClass="control-label"/>
+                        <p:inputText styleClass="form-control" value="#{managerPesquisarUsuarios.usuario.nome}"
+                                     onkeypress="mascara(this, soLetras)"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <p:outputLabel value="Profissão" styleClass="control-label"/>
+                        <p:inputText styleClass="form-control" value="#{managerPesquisarUsuarios.usuario.login}" />
+                    </div>
+                </p:outputPanel>
+            </p:panel>
+
+            <div style="clear: both" />
+
+            <center>
+                <p:commandButton  id="pesquisarCommandButton" value="Pesquisar" icon="fa fa-search"
+                                  update="tableUser"
+                                  actionListener="#{managerPesquisarUsuarios.pesquisar()}"
+                                  styleClass="btn btn-info"/>
+
+                <p:commandButton value="Limpar" update="@form" icon="fa fa-eraser"
+                                 styleClass="btn btn-default"
+                                 actionListener="#{managerPesquisarUsuarios.limpar()}" />
+            </center>
+
+            <p:blockUI id="BLOCK12" block="tableUser" trigger="pesquisarCommandButton, tableUser" > 
+                <p:graphicImage value="resources/assets/images/ajax-loader.gif"/>
+                Carregando registros...
+            </p:blockUI>
+
+            <fieldset>
+                <legend>Resultado</legend>
+                <p:dataTable id="tableUser" var="u" value="#{managerPesquisarUsuarios.usuarios}" 
+                                 rowIndexVar="rowid"
+                                
+                                 rows="5" paginator="true" lazy="true"   
+                                 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                                 currentPageReportTemplate="{currentPage} de {totalPages}"
+                                 paginatorPosition="bottom" emptyMessage="Nenhum registro encontrado">
+
+                        <f:facet name="header">
+                            <p:outputLabel value="Usuário" />
+                        </f:facet>
+
+                        <p:column headerText="Ação" width="70">
+                            <p:button title="Editar"
+                                      href="cadUsuarios.xhtml?id=#{u.id}"
+                                      icon="fa fa-pencil"/>
+
+                            
+                        </p:column>
+
+                        <p:column headerText="Nome">
+                            <h:outputText value="#{u.nome}"/>
+                        </p:column>
+
+                        <p:column headerText="Login">
+                            <h:outputText value="#{u.login}"/>
+                        </p:column>
+                    </p:dataTable> 
+            </fieldset>
+
+            <p:dialog id="modalDialog" header="Confirmar Remoção" widgetVar="dialogRemover" modal="true"
+                      draggable="false" styleClass="dialogo-confirmacao" responsive="true"
+                      closable="true" resizable="false" closeOnEscape="true">
+                <center>
+                    <div class="col-sm-12">
+                        <h:outputText value="Tem certeza que deseja remover este usuário ?" />
+                    </div>
+                    
+                    <p:commandButton value="Sim" update="@form" styleClass="btn btn-default"
+                                    
+                                     icon="fa fa-check"/>
+                    <p:commandButton value="Não" icon="fa fa-close" styleClass="btn btn-default"
+                                     oncomplete="PF('dialogRemover').hide()" />
+                </center>
+            </p:dialog>
+        </h:form>
+    </ui:define>
+</ui:composition>

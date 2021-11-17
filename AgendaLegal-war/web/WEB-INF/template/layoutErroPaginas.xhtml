@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html 
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <f:view contentType="text/html" />
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+            <title><ui:insert name="titulo">Atlas</ui:insert></title>
+        </f:facet>
+
+        <f:facet name="middle">
+            <link rel="stylesheet" href="resources/assets/styles/style.css" type="text/css"/>
+            <link href="resources/assets/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+            <link href="media/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="resources/assets/styles/error_pages.css" />
+            <link rel="stylesheet" href="resources/assets/fonts/fontGeral/css/fontGeral.css" type="text/css"/>
+        </f:facet>
+
+        <f:facet name="last">
+            <script type='text/javascript' src='resources/assets/scripts/canvas.js'></script>
+        </f:facet>
+    </h:head>
+
+    <h:body>
+        <div id="single-wrapper">
+            <div id="titulo" class="col-sm-12">
+                <center>
+                    <ui:insert name="titulo"></ui:insert>
+                </center>
+            </div>
+
+            <div class="col-sm-5 col-sm-offset-0 col-md-4 col-md-offset-2">
+                <center>
+                    <canvas id="logoCanvas" width="340" height="320"/>
+                    <p>
+                        <span id="fox">Fox</span>
+                        <span id="inline">Inline</span>
+                        <span id="tech">Technologies</span>
+                    </p>
+                </center>
+            </div>
+
+            <div class="col-sm-7 col-md-6">
+                <div id="conteudo">
+                    <center>
+                        <h3>
+                            <i class="fa fa-warning text-yellow"></i>
+                            <ui:insert name="error-content"></ui:insert>
+                        </h3>
+                        <p>
+                            <ui:insert name="error-detail"></ui:insert>
+                        </p>
+                        <p>
+                            Clique <a href="index.xhtml">aqui</a> para voltar a página inicial.
+                        </p>
+                    </center>
+                </div>
+            </div>
+
+            <div id="rodape" class="col-sm-12">
+                <ui:include src="/WEB-INF/template/rodape.xhtml"/>
+            </div>
+        </div>
+    </h:body>
+</html>

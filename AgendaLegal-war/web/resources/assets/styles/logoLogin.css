@@ -1,0 +1,19 @@
+/* 
+    Document   : logoLogin
+    Created on : 13/09/2017, 17:35:23
+    Author     : jaciel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.logo {
+    padding-bottom: 15px;
+}
+.logo .logo-img{
+    background-size: 97% 165px;
+    background-position: center 10px;
+    background-repeat: no-repeat;
+    width: 97%;
+    margin: 0 auto;
+}
+

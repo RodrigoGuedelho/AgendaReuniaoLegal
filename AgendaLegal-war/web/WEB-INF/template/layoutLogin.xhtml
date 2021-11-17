@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <f:view contentType="text/html" />
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+            <title><ui:insert name="titulo">Registro Territorial</ui:insert></title>
+        </f:facet>
+
+        <f:facet name="middle">
+            <link rel="stylesheet" href="resources/assets/styles/style.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/styles/logoLogin.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/plugin/waves/waves.min.css" type="text/css"/>
+            <link rel="stylesheet" href="resources/assets/fonts/fontGeral/css/fontGeral.css" type="text/css"/>
+        </f:facet>
+    </h:head>
+    <h:body>
+        <div id="single-wrapper">
+            <form action="j_security_check" method="POST" class="frm-single">
+                <div class="inside">
+                    <ui:include src="/WEB-INF/template/topoLogin.xhtml"/>
+                    <ui:insert name="corpo" ></ui:insert>
+                    <ui:include src="/WEB-INF/template/rodape.xhtml"/>
+                </div> 
+            </form>
+        </div>
+
+        <script src="resources/assets/scripts/jquery.min.js"></script>
+        <script src="resources/assets/scripts/modernizr.min.js"></script>
+        <script src="resources/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+        <script src="resources/assets/plugin/waves/waves.min.js"></script>
+    </h:body>
+</html>
